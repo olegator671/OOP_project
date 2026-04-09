@@ -18,8 +18,9 @@ class Expression{
                 results[i] = input[i];
             }
         }
+        
 
-        int combinations[8][3] = {
+        const int combinations3[8][3] = {
             {0,0,0},
             {0,0,1},
             {0,1,0},
@@ -29,12 +30,51 @@ class Expression{
             {1,1,0},
             {1,1,1}
         };
+        const int combinations2[4][2] = {
+            {0,0},
+            {0,1},
+            {1,0},
+            {1,1}
+        };
+        const int combinations3[2] = {
+            0,
+            1
+        };
 };
 
 class Operator{
-protected:
-    char variables[2];
-    int result;
+    protected:
+        int variables[2];
+        int result;
+        int priority;
+
+    public:
+
+        
+};
+
+class And: public Operator{
+    
+};
+
+class Or: public Operator{
+
+};
+
+class Not: public Operator{
+    
+};
+
+class Xor: public Operator{
+
+};
+
+class Nand: public Operator{
+
+};
+
+class Nor: public Operator{
+
 };
 
 int main(){
