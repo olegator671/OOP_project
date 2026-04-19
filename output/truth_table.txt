@@ -1,0 +1,20 @@
+*** BOOLEAN TRUTH TABLE SIMULATOR ***
+
+Expression:
+A AND B XOR C
+
+Operators Detected and Explained:
+- AND: Returns true only when both inputs are true. Example: 1 AND 1 = 1, 1 AND 0 = 0.
+- XOR: Returns true when inputs are different. Example: 1 XOR 0 = 1, 1 XOR 1 = 0.
+
+Truth Table:
+|   A |   B |   C | RESULT |
+|-----|-----|-----|--------|
+|   0 |   0 |   0 |      0 |
+|   0 |   0 |   1 |      1 |
+|   0 |   1 |   0 |      0 |
+|   0 |   1 |   1 |      1 |
+|   1 |   0 |   0 |      0 |
+|   1 |   0 |   1 |      1 |
+|   1 |   1 |   0 |      1 |
+|   1 |   1 |   1 |      0 |

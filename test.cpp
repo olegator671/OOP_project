@@ -1,43 +1,48 @@
+#include <fstream>
 #include <iostream>
 #include <string>
+using namespace std;
 
-class Person{
-    protected:
-        std::string address;
-        std::string name;
-    public:
-        void setAddress(std::string value){
-            address = value;
-        }
-        void setName(std::string value){
-            name = value;
-        }
-        std::string getAddress(){
-            return address;
-        }
-        std::string getName(){
-            return name;
-        }
-};
+const string FILE_NAME = "truth_table.txt";
 
-class Employee: public Person{
-    private:
-        int salary;
-    public:
-        void setSalary(int value){
-            salary = value;
-        }
-        int getSalary(){
-            return salary;
-        }
-};
+void saveTestTable() {
+    ofstream file(FILE_NAME);
 
-int main(){
-    Employee accountant;
-    accountant.setSalary(20000);
-    std::cout<<accountant.getSalary();
-    accountant.setName("Maria");
-    std::cout<<accountant.getName(); 
-    std::cout<<accountant.getName();
+    if (!file) {
+        cout << "Error: could not open file.\n";
+        return;
+    }
+
+    string expression = "A AND B";
+
+    string table =
+        "|  A |  B | RESULT |\n"
+        "|-----|-----|--------|\n"
+        "|  0 |  0 |   0    |\n"
+        "|  0 |  1 |   0    |\n"
+        "|  1 |  0 |   0    |\n"
+        "|  1 |  1 |   1    |\n";
+
+    file << "*** BOOLEAN TRUTH TABLE SIMULATOR ***\n\n";
+    file << "Expression:\n";
+    file << expression << "\n\n";
+
+    file << "Operators Detected and Explained:\n";
+    file << "- AND: Returns true only when both inputs are true.\n\n";
+
+    file << "Truth Table:\n";
+    file << table;
+
+    file.close();
+
+    cout << "fart\n";
+}
+
+int main() {
+
+    saveTestTable();
+
+    cout << "Check file: truth_table.txt\n";
+
     return 0;
 }
